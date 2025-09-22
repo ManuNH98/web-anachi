@@ -1,11 +1,25 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import HeroSection from '../components/HeroSection.astro';
+import SocialSection from '../components/SocialSection.astro';
+import ServiceSection from '../components/ServiceSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ContactSection from '../components/ContactSection.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Aduanas Anachi | Expertos en Gestión Aduanera"
+  description="Más de 25 años simplificando trámites de importación y exportación con un trato cercano y personalizado. Tu mercancía, liberada a tiempo."
+  ogTitle="Aduanas Anachi: Tu Socio Estratégico en Canarias | Gestión Aduanera Eficaz"
+  ogDescription="Descubre cómo Aduanas Anachi, con más de 25 años de experiencia, agiliza tus operaciones de importación y exportación en Las Palmas. Asesoría experta y trato familiar."
+>
+  <Header />
+  <main>
+    <HeroSection />
+	<SocialSection />
+	<ServiceSection />
+	<AboutSection />
+	<ContactSection />
+  </main>
 </Layout>

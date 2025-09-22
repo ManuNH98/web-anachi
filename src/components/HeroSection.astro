@@ -1,0 +1,27 @@
+---
+import heroImage from '../assets/hero-bg.png';
+---
+
+<section 
+  id="home"
+  class="relative h-screen flex items-center justify-center text-center overflow-hidden"
+  style={`background-image: url(${heroImage.src}); background-size: cover; background-position: center;`}
+>
+  <div 
+    class="absolute inset-0 z-0"
+    style={`background-color: var(--color-primary-dark); opacity: 0.7;`}
+  ></div>
+
+  <div class="relative z-10 p-4 max-w-4xl mx-auto">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6" style="color: var(--color-white);">
+      Más de 25 años convirtiendo la burocracia aduanera en tranquilidad para nuestros clientes.
+    </h1>
+    <p class="text-lg sm:text-xl mb-10" style="color: var(--color-white);">
+      Somos tu socio estratégico en gestión aduanera, garantizando transparencia y agilidad en cada paso.
+      Con la confianza de un trato personal y familiar.
+    </p>
+    <a href="#contacto" class="btn-primary text-xl uppercase tracking-wide py-4 px-10 shadow-lg">
+      Habla con un Experto
+    </a>
+  </div>
+</section>

@@ -1,0 +1,101 @@
+---
+import logoAnachi from '../assets/logo.png'; // Usamos el logo para fondo claro del header
+---
+
+<header class="py-4" style="background-color: var(--color-background-light);">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a href="#inicio">
+      <img src={logoAnachi.src} alt="Logo de Aduanas Anachi" width="160" /> {/* Logo un poco más pequeño */}
+    </a>
+
+    {/* Menú de Navegación para pantallas grandes (Desktop) */}
+    <nav class="hidden md:block">
+      <ul class="flex space-x-8">
+        <li><a href="#servicios" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Servicios</a></li>
+        <li><a href="#quienes-somos" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Quiénes Somos</a></li>
+        <li><a href="#contacto" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Contacto</a></li>
+        {/* El botón "Habla con un Experto" en desktop puede ir aquí o separado como antes. Lo ponemos separado para mantener flexibilidad visual. */}
+      </ul>
+    </nav>
+
+    {/* Botón "Habla con un Experto" para desktop */}
+    <a href="#contacto" class="btn-primary hidden md:block text-base px-6 py-2">
+      Habla con un Experto
+    </a>
+
+    {/* Botón de Hamburguesa para móvil */}
+    <button id="menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-orange">
+      <svg id="menu-icon-open" class="h-8 w-8 text-primary-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="menu-icon-close" class="h-8 w-8 text-primary-dark hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  {/* Menú deslizante para móvil */}
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 w-64 p-6 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50 shadow-lg" style="background-color: var(--color-white);">
+    <div class="flex justify-end mb-8">
+      <button id="close-menu-button" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-orange">
+        <svg class="h-8 w-8 text-primary-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col space-y-6 text-xl">
+      <a href="#servicios" class="text-primary-dark hover:text-accent-orange transition-colors duration-200" id="mobile-nav-servicios">Servicios</a>
+      <a href="#quienes-somos" class="text-primary-dark hover:text-accent-orange transition-colors duration-200" id="mobile-nav-quienes-somos">Quiénes Somos</a>
+      <a href="#contacto" class="text-primary-dark hover:text-accent-orange transition-colors duration-200" id="mobile-nav-contacto">Contacto</a>
+      <div class="pt-8">
+        <a href="#contacto" class="btn-primary w-full text-center text-lg py-3">
+          Habla con un Experto
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  // Script para manejar el menú móvil
+  const menuButton = document.getElementById('menu-button');
+  const closeMenuButton = document.getElementById('close-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+  const mobileNavLinks = mobileMenu.querySelectorAll('a'); // Selecciona todos los enlaces dentro del menú móvil
+
+  function toggleMenu() {
+    mobileMenu.classList.toggle('translate-x-full'); // Desliza el menú
+    menuIconOpen.classList.toggle('hidden'); // Alterna icono de hamburguesa
+    menuIconClose.classList.toggle('hidden'); // Alterna icono de cierre
+    document.body.classList.toggle('overflow-hidden'); // Evita scroll en el body cuando el menú está abierto
+  }
+
+  menuButton.addEventListener('click', toggleMenu);
+  closeMenuButton.addEventListener('click', toggleMenu);
+
+  // Cierra el menú cuando se hace clic en un enlace del menú móvil
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (!mobileMenu.classList.contains('translate-x-full')) { // Si el menú está abierto
+        toggleMenu(); // Cierra el menú
+      }
+    });
+  });
+
+  // Opcional: Cierra el menú si se redimensiona a desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && !mobileMenu.classList.contains('translate-x-full')) {
+      toggleMenu();
+    }
+  });
+
+</script>
+
+<style is:global>
+  /* Asegura que el body tenga un overflow oculto cuando el menú esté abierto */
+  body.overflow-hidden {
+    overflow: hidden;
+  }
+</style>
