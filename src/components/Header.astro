@@ -4,22 +4,22 @@ import logoAnachi from '../assets/logo.png'; // Usamos el logo para fondo claro 
 
 <header class="py-4" style="background-color: var(--color-background-light);">
   <div class="container mx-auto px-4 flex justify-between items-center">
-    <a href="#inicio">
+    <a href="/">
       <img src={logoAnachi.src} alt="Logo de Aduanas Anachi" width="160" /> {/* Logo un poco más pequeño */}
     </a>
 
     {/* Menú de Navegación para pantallas grandes (Desktop) */}
     <nav class="hidden md:block">
       <ul class="flex space-x-8">
-        <li><a href="#servicios" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Servicios</a></li>
-        <li><a href="#quienes-somos" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Quiénes Somos</a></li>
-        <li><a href="#contacto" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Contacto</a></li>
+        <li><a href="#services" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Servicios</a></li>
+        <li><a href="#about-us" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Quiénes Somos</a></li>
+        <li><a href="#contact" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Contacto</a></li>
         {/* El botón "Habla con un Experto" en desktop puede ir aquí o separado como antes. Lo ponemos separado para mantener flexibilidad visual. */}
       </ul>
     </nav>
 
     {/* Botón "Habla con un Experto" para desktop */}
-    <a href="#contacto" class="btn-primary hidden md:block text-base px-6 py-2">
+    <a href="#contact" class="btn-primary hidden md:block text-base px-6 py-2">
       Habla con un Experto
     </a>
 
@@ -57,40 +57,46 @@ import logoAnachi from '../assets/logo.png'; // Usamos el logo para fondo claro 
 </header>
 
 <script is:inline>
-  // Script para manejar el menú móvil
   const menuButton = document.getElementById('menu-button');
   const closeMenuButton = document.getElementById('close-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIconOpen = document.getElementById('menu-icon-open');
   const menuIconClose = document.getElementById('menu-icon-close');
-  const mobileNavLinks = mobileMenu.querySelectorAll('a'); // Selecciona todos los enlaces dentro del menú móvil
+  const mobileNavLinks = mobileMenu.querySelectorAll('a');
 
   function toggleMenu() {
-    mobileMenu.classList.toggle('translate-x-full'); // Desliza el menú
-    menuIconOpen.classList.toggle('hidden'); // Alterna icono de hamburguesa
-    menuIconClose.classList.toggle('hidden'); // Alterna icono de cierre
-    document.body.classList.toggle('overflow-hidden'); // Evita scroll en el body cuando el menú está abierto
+    mobileMenu.classList.toggle('translate-x-full');
+    menuIconOpen.classList.toggle('hidden');
+    menuIconClose.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-hidden');
   }
 
   menuButton.addEventListener('click', toggleMenu);
   closeMenuButton.addEventListener('click', toggleMenu);
 
-  // Cierra el menú cuando se hace clic en un enlace del menú móvil
   mobileNavLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (!mobileMenu.classList.contains('translate-x-full')) { // Si el menú está abierto
-        toggleMenu(); // Cierra el menú
+    link.addEventListener('click', (event) => {
+      // PREVENIMOS EL COMPORTAMIENTO POR DEFECTO DEL ENLACE TEMPORALMENTE
+      event.preventDefault(); 
+
+      // CERRAMOS EL MENÚ CON UN PEQUEÑO RETRASO PARA QUE EL NAVEGADOR PUEDA HACER EL SCROLL SUAVE
+      if (!mobileMenu.classList.contains('translate-x-full')) {
+        setTimeout(() => {
+          toggleMenu(); // Cierra el menú
+          window.location.href = link.href; // Navegamos programáticamente a la URL del enlace
+        }, 300); // 300ms de retraso, igual o mayor a la duración de la transición del menú
+      } else {
+        // Si el menú estaba cerrado, simplemente navegamos
+        window.location.href = link.href;
       }
     });
   });
 
-  // Opcional: Cierra el menú si se redimensiona a desktop
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 768 && !mobileMenu.classList.contains('translate-x-full')) {
       toggleMenu();
     }
   });
-
 </script>
 
 <style is:global>
