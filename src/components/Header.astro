@@ -4,22 +4,22 @@ import logoAnachi from '../assets/logo.png'; // Usamos el logo para fondo claro 
 
 <header class="py-4" style="background-color: var(--color-background-light);">
   <div class="container mx-auto px-4 flex justify-between items-center">
-    <a href="#inicio">
+    <a href="/">
       <img src={logoAnachi.src} alt="Logo de Aduanas Anachi" width="160" /> {/* Logo un poco más pequeño */}
     </a>
 
     {/* Menú de Navegación para pantallas grandes (Desktop) */}
     <nav class="hidden md:block">
       <ul class="flex space-x-8">
-        <li><a href="#servicios" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Servicios</a></li>
-        <li><a href="#quienes-somos" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Quiénes Somos</a></li>
-        <li><a href="#contacto" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Contacto</a></li>
+        <li><a href="#services" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Servicios</a></li>
+        <li><a href="#about-us" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Quiénes Somos</a></li>
+        <li><a href="#contact" class="text-text-dark hover:text-accent-orange transition-colors duration-200 text-lg font-body font-semibold">Contacto</a></li>
         {/* El botón "Habla con un Experto" en desktop puede ir aquí o separado como antes. Lo ponemos separado para mantener flexibilidad visual. */}
       </ul>
     </nav>
 
     {/* Botón "Habla con un Experto" para desktop */}
-    <a href="#contacto" class="btn-primary hidden md:block text-base px-6 py-2">
+    <a href="#contact" class="btn-primary hidden md:block text-base px-6 py-2">
       Habla con un Experto
     </a>
 
