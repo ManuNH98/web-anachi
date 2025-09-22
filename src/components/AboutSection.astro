@@ -1,0 +1,34 @@
+---
+import aboutImage from '../assets/about.png'; // Asegúrate de guardar la imagen generada con este nombre y en esta ruta
+---
+
+<section id="about-us" class="py-20 px-4" style={`background-color: var(--color-background-light);`}>
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    {/* Columna de la Imagen */}
+    <div class="md:order-2"> {/* En pantallas medianas y grandes, la imagen a la derecha */}
+      <img 
+        src={aboutImage.src} 
+        alt="Equipo de Aduanas Anachi trabajando en oficina con vistas al puerto" 
+        class="rounded-lg shadow-xl w-full h-auto object-cover"
+        width="600" 
+        height="400" 
+      />
+    </div>
+
+    {/* Columna del Texto */}
+    <div class="md:order-1 text-center md:text-left"> {/* En pantallas medianas y grandes, el texto a la izquierda */}
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+        Más de 25 Años de Compromiso Familiar con tu Éxito
+      </h2>
+      <p class="text-lg mb-4">
+        En Aduanas Anachi, somos una empresa familiar con una trayectoria de más de dos décadas en el sector aduanero. Nuestra historia es la de un compromiso constante con la eficiencia, la transparencia y, sobre todo, un trato humano y cercano.
+      </p>
+      <p class="text-lg mb-6">
+        Creemos firmemente que detrás de cada importación o exportación hay personas y sueños. Por eso, combinamos nuestra profunda experiencia con una atención personalizada que te hace sentir parte de nuestra familia. Tu tranquilidad es el motor que nos impulsa a superar cada reto.
+      </p>
+      <a href="#contacto" class="btn-primary mt-4">
+        Conoce al Equipo
+      </a>
+    </div>
+  </div>
+</section>∫
