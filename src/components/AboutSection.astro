@@ -1,34 +1,63 @@
 ---
 import aboutImage from '../assets/about.png'; // Asegúrate de guardar la imagen generada con este nombre y en esta ruta
+
+const teamMembers = [
+  { name: 'Marcela Zapata Ortiz', role: 'Dpto. Nacional y CEE' },
+  { name: 'Alejandro Navarro Higueras', role: 'Dpto. CEE y terceros' },
+  { name: 'Jose Luis Hernandez Galvan', role: 'Dpto. Exportación' },
+  { name: 'Alejandro Navarro Chirino', role: 'Dpto. Administración y Dirección' },
+];
 ---
 
 <section id="about-us" class="py-20 px-4" style={`background-color: var(--color-background-light);`}>
   <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     {/* Columna de la Imagen */}
-    <div class="md:order-2"> {/* En pantallas medianas y grandes, la imagen a la derecha */}
-      <img 
-        src={aboutImage.src} 
-        alt="Equipo de Aduanas Anachi trabajando en oficina con vistas al puerto" 
+    <div class="md:order-2">
+      <img
+        src={aboutImage.src}
+        alt="Equipo de Aduanas Anachi trabajando en oficina con vistas al puerto"
+        width={aboutImage.width}
+        height={aboutImage.height}
+        loading="lazy"
         class="rounded-lg shadow-xl w-full h-auto object-cover"
-        width="600" 
-        height="400" 
       />
     </div>
 
     {/* Columna del Texto */}
-    <div class="md:order-1 text-center md:text-left"> {/* En pantallas medianas y grandes, el texto a la izquierda */}
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6">
-        Más de 25 Años de Compromiso Familiar con tu Éxito
+    <div class="md:order-1 text-center md:text-left">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4">
+        Nuestra Historia: 30 Años de Confianza y Soluciones Aduaneras
       </h2>
-      <p class="text-lg mb-4">
-        En Aduanas Anachi, somos una empresa familiar con una trayectoria de más de dos décadas en el sector aduanero. Nuestra historia es la de un compromiso constante con la eficiencia, la transparencia y, sobre todo, un trato humano y cercano.
+      <p class="text-lg sm:text-xl mb-6">
+        Fundada en <strong>1998</strong>, Aduanas Anachi es una empresa familiar dedicada desde sus inicios a simplificar la compleja burocracia de la gestión aduanera. Nuestra misión es clara: <strong>ofrecer soluciones logísticas eficaces y no transmitir problemas a nuestros clientes</strong>, garantizando la fluidez de tus operaciones de importación y exportación.
       </p>
-      <p class="text-lg mb-6">
-        Creemos firmemente que detrás de cada importación o exportación hay personas y sueños. Por eso, combinamos nuestra profunda experiencia con una atención personalizada que te hace sentir parte de nuestra familia. Tu tranquilidad es el motor que nos impulsa a superar cada reto.
-      </p>
-      <a href="#contact" class="btn-primary mt-4">
-        Conoce al Equipo
-      </a>
+
+      {/* Bloque de Credenciales */}
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 text-left">
+        <h3 class="text-2xl font-bold mb-3 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--color-accent-orange);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            Nuestras Credenciales
+        </h3>
+        <p class="mb-2">
+          <strong>Representantes Aduaneros:</strong> Contamos con la autorización oficial para presentar todas tus declaraciones aduaneras.
+        </p>
+        <p>
+          <strong>Operador Económico Autorizado (OEA):</strong> Nuestro estatus OEA, otorgado por la Unión Europea, nos reconoce como operadores de confianza en la cadena de suministro internacional, lo que se traduce en procedimientos aduaneros más ágiles y seguros para ti.
+        </p>
+      </div>
+
+      {/* Sección del Equipo */}
+      <h3 class="text-3xl font-bold mb-4">Conoce a Nuestro Equipo</h3>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-lg text-center md:text-left"> {/* Añadimos grid y ajustamos gap y alineación */}
+        {teamMembers.map(member => (
+          <li class="flex flex-col"> {/* Eliminamos items-center y md:items-start de aquí si ya está en el ul */}
+            <span class="font-semibold text-primary-dark">{member.name}</span>
+            <span class="text-gray-600">{member.role}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
-</section>∫
+</section>
