@@ -2,20 +2,28 @@
 // Importaciones si las hay
 ---
 
-<section id="contact" class="py-20 px-4" style={`background-color: var(--color-background-light);`}>
+<section id="contact" class="py-24 px-4" style={`background-color: var(--color-background-light);`}>
   <div class="container mx-auto">
-    <h2 class="text-4xl sm:text-5xl font-bold text-center mb-12">Hablemos de tus Necesidades Aduaneras</h2>
+    <div class="mx-auto max-w-3xl text-center mb-12">
+      <p class="section-eyebrow justify-center">Contacto</p>
+      <h2 class="text-4xl sm:text-5xl font-bold">Hablemos de tus Necesidades Aduaneras</h2>
+    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-20"> {/* Añado mb-20 para separar del FAQ */}
-      {/* Columna de Información de Contacto */}
-      <div class="text-center md:text-left">
-        <h3 class="text-3xl font-bold mb-6">Estamos aquí para ayudarte.</h3>
-        <p class="text-lg mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch mb-20">
+      <div class="surface-card flex h-full flex-col rounded-[2rem] p-8 text-center md:text-left">
+        <div class="mb-8 rounded-3xl p-6" style="background-color: var(--color-primary-dark);">
+          <p class="section-eyebrow justify-center md:justify-start">Atencion directa</p>
+          <h3 class="text-3xl font-bold" style="color: var(--color-white);">Estamos aquí para ayudarte.</h3>
+          <p class="mt-4 text-lg leading-8" style="color: rgba(255, 255, 255, 0.78);">
+            Cuéntanos tu operativa y te orientamos sobre documentación, inspecciones y trámites aduaneros.
+          </p>
+        </div>
+        <p class="text-lg mb-8 leading-8" style="color: var(--color-text-muted);">
           Si tienes preguntas sobre nuestros servicios, necesitas una asesoría personalizada o quieres optimizar tus operaciones aduaneras, no dudes en contactarnos. Nuestro equipo de expertos está listo para ofrecerte soluciones.
         </p>
 
-        <div class="space-y-6 mb-8 text-xl">
-          <div class="flex items-start md:items-center flex-col md:flex-row gap-2">
+        <div class="mt-auto space-y-4 text-lg">
+          <div class="flex items-start md:items-center flex-col md:flex-row gap-3 rounded-3xl border border-slate-200 bg-white p-5">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-dark flex-shrink-0"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
@@ -29,7 +37,7 @@
               </a>
             </p>
           </div>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-3 rounded-3xl border border-slate-200 bg-white p-5">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-dark flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
@@ -39,7 +47,7 @@
               <a href="tel:+34609887264" class="hover:text-accent-orange transition-colors duration-200">+34 609 887 264</a>
             </p>
           </div>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-3 rounded-3xl border border-slate-200 bg-white p-5">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-dark flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13h9V6a2 2 0 00-2-2H3a2 2 0 00-2 2v15h9z" />
             </svg>
@@ -54,28 +62,31 @@
         </div>
       </div>
 
-      {/* Columna del Formulario de Contacto */}
-      <div class="bg-white p-8 rounded-lg shadow-lg">
-        <form action="https://formspree.io/f/xyzkjlmn" method="POST"> {/* Asegúrate de que esta sea tu URL de Formspree */}
-          <div class="space-y-6">
+      <div class="surface-card flex h-full rounded-[2rem] p-8">
+        <form action="https://formspree.io/f/xyzkjlmn" method="POST" class="flex w-full flex-col">
+          <div class="flex flex-1 flex-col space-y-6">
+            <div>
+              <p class="section-eyebrow">Formulario</p>
+              <h3 class="text-3xl font-bold">Solicita una asesoría</h3>
+            </div>
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
-              <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent-orange focus:border-accent-orange">
+              <input type="text" name="name" id="name" required class="mt-2 block w-full rounded-2xl border border-slate-200 px-4 py-3 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20">
             </div>
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-              <input type="email" name="_replyto" id="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent-orange focus:border-accent-orange">
+              <input type="email" name="_replyto" id="email" required class="mt-2 block w-full rounded-2xl border border-slate-200 px-4 py-3 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20">
             </div>
             <div>
               <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono (Opcional)</label>
-              <input type="tel" name="phone" id="phone" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent-orange focus:border-accent-orange">
+              <input type="tel" name="phone" id="phone" class="mt-2 block w-full rounded-2xl border border-slate-200 px-4 py-3 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20">
             </div>
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700">¿Cómo podemos ayudarte?</label>
-              <textarea name="message" id="message" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent-orange focus:border-accent-orange"></textarea>
+              <textarea name="message" id="message" rows="10" required class="mt-2 block w-full rounded-2xl border border-slate-200 px-4 py-3 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"></textarea>
             </div>
             <input type="hidden" name="_subject" value="Nuevo Mensaje desde Landing Page Anachi" />
-            <div>
+            <div class="mt-auto">
               <button type="submit" class="w-full btn-primary py-3">
                 Solicitar Asesoría
               </button>
@@ -85,13 +96,12 @@
       </div>
     </div>
 
-    {/* SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) - ¡CORREGIDA CON ACORDEÓN! */}
-    <div class="mt-20"> {/* margin-top para separar del grid superior */}
+    <div class="mt-20">
       <h3 class="text-4xl sm:text-5xl font-bold text-center mb-10">Preguntas Frecuentes</h3>
-      <div class="space-y-4 max-w-4xl mx-auto"> {/* Centrado y con espacio entre elementos */}
+      <div class="space-y-4 max-w-4xl mx-auto">
         
         {/* Pregunta 1: ¿Qué es un DUA y para qué sirve? */}
-        <details class="group p-4 rounded-lg bg-white shadow-md">
+        <details class="surface-card group p-5 rounded-2xl">
           <summary class="font-bold cursor-pointer list-none flex justify-between items-center text-primary-dark">
             ¿Qué es un DUA y para qué sirve?
             <span class="transform transition-transform duration-300 group-open:rotate-45 text-accent-orange">
@@ -104,7 +114,7 @@
         </details>
 
         {/* Pregunta 2: ¿Qué tengo que hacer para realizar operaciones intracomunitarias? */}
-        <details class="group p-4 rounded-lg bg-white shadow-md">
+        <details class="surface-card group p-5 rounded-2xl">
           <summary class="font-bold cursor-pointer list-none flex justify-between items-center text-primary-dark">
             ¿Qué tengo que hacer para realizar operaciones intracomunitarias?
             <span class="transform transition-transform duration-300 group-open:rotate-45 text-accent-orange">
@@ -117,7 +127,7 @@
         </details>
 
         {/* Pregunta 3: ¿Cómo puedo comprobar la partida arancelaria de mi mercancía y si está vigente? */}
-        <details class="group p-4 rounded-lg bg-white shadow-md">
+        <details class="surface-card group p-5 rounded-2xl">
           <summary class="font-bold cursor-pointer list-none flex justify-between items-center text-primary-dark">
             ¿Cómo puedo comprobar la partida arancelaria de mi mercancía y si está vigente?
             <span class="transform transition-transform duration-300 group-open:rotate-45 text-accent-orange">
@@ -130,7 +140,7 @@
         </details>
 
         {/* Pregunta 4: ¿Qué es el VGM (Verify Gross Mass)? */}
-        <details class="group p-4 rounded-lg bg-white shadow-md">
+        <details class="surface-card group p-5 rounded-2xl">
           <summary class="font-bold cursor-pointer list-none flex justify-between items-center text-primary-dark">
             ¿Qué es el VGM (Verify Gross Mass)?
             <span class="transform transition-transform duration-300 group-open:rotate-45 text-accent-orange">
@@ -143,7 +153,7 @@
         </details>
 
         {/* Pregunta 5: Medidas de los contenedores */}
-        <details class="group p-4 rounded-lg bg-white shadow-md">
+        <details class="surface-card group p-5 rounded-2xl">
           <summary class="font-bold cursor-pointer list-none flex justify-between items-center text-primary-dark">
             Medidas de los contenedores
             <span class="transform transition-transform duration-300 group-open:rotate-45 text-accent-orange">
