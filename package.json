@@ -2,6 +2,7 @@
   "name": "web-anachi",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@10.17.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,9 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.2.7",
-    "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.13.9",
-    "tailwindcss": "^4.1.13"
+    "@astrojs/vercel": "^10.0.7",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.3.3",
+    "tailwindcss": "^4.3.0"
   }
 }
