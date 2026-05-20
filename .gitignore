@@ -24,8 +24,3 @@ package-lock.json
 
 # jetbrains setting folder
 .idea/
-
-# AI generated code
-*.AGENTS.md
-*.agents
-skills-lock.json
